@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     signIn() {
-      console.log('amigo');
+      this.$store.dispatch('auth/login');
     },
   },
 };

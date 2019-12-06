@@ -9,7 +9,6 @@ export default {
   },
   actions: {
     login() {
-      console.log('Logueado');
       const google = new Firebase.auth.GoogleAuthProvider();
       Firebase.auth().signInWithPopup(google)
         .then((user) => {
