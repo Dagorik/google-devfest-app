@@ -8,27 +8,22 @@
       rounded
       color="deep-orange"
       label="Glossy Rounded"
-      v-on:click="signin"
+      v-on:click="signIn"
     />
 
   </div>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
-      name: '',
-      age: '',
-      accept: true,
     };
   },
-  created() {
-
-  },
   methods: {
-    signin: () => {
-      alert('Holoo');
+    signIn() {
+      console.log('amigo');
     },
   },
 };
