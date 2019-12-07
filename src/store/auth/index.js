@@ -8,8 +8,7 @@ export default {
   },
   mutations: {
     SET_USER(state, payload) {
-      const user = payload;
-      state.user = user;
+      state.user = payload;
     },
 
     RESET_USER(state) {
@@ -19,14 +18,14 @@ export default {
   actions: {
     login({ commit }) {
       const google = new Firebase.auth.GoogleAuthProvider();
-      Firebase.auth().signInWithPopup(google)
-        .then((user) => {
-          console.log(user);
-          commit('SET_USER', user);
+      return new Promise((resolve, reject) => Firebase.auth().signInWithPopup(google)
+        .then((login) => {
+          commit('SET_USER', login);
+          resolve(login);
         })
         .catch((err) => {
-          throw err;
-        });
+          reject(err);
+        }));
     },
   },
   getters: {
