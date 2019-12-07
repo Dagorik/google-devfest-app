@@ -7,7 +7,7 @@
           v-for="(item, index) of events" :key="index">
             <div class="item-content q-py-sm" v-for="event of item.list" :key="event.id">
               <div>
-                <q-chip color="warning" size="md">{{ event.track }}</q-chip>
+                <q-chip color="product" size="md">{{ event.track }}</q-chip>
                 <span>{{ event.title }}</span>
                 <p> {{ event.speaker }}</p>
               </div>
@@ -64,6 +64,11 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    this.$axios
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+      .then(res => console.log(res));
   },
 };
 </script>
