@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  name: 'Login',
   data() {
     return {};
   },
@@ -22,11 +23,10 @@ export default {
     signIn() {
       this.$store
         .dispatch('auth/login')
-        .then((user) => {
-          console.log(user);
+        .then(() => {
+          this.$router.push('/events');
         })
         .catch((err) => {
-          console.log(err);
           throw err;
         });
     },

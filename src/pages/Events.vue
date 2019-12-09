@@ -67,8 +67,8 @@ export default {
   },
   mounted() {
     this.$axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then(res => console.log(res));
+      .get('https://api.coindesk.com/v1/bpi/currentprice.json');
+    // .then(res => console.log(res));
   },
 };
 </script>
