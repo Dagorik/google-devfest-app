@@ -13,6 +13,9 @@
 <script>
 export default {
   name: 'PageIndex',
+  async mounted() {
+    await this.$store.dispatch('api/fetchSpeakers');
+  },
 };
 </script>
 
