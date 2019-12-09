@@ -33,3 +33,7 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+
+
+# Fireabase Credentials
+firebase.conf.js

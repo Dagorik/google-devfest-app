@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar class="glossy">
         <q-btn
           flat
           dense
@@ -11,11 +11,9 @@
           aria-label="Menu"
         />
 
-        <q-toolbar-title>
-          Quasar App
+        <q-toolbar-title class="font">
+          DevFest CDMX
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
