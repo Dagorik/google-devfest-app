@@ -44,7 +44,7 @@ module.exports = function (ctx) {
       all: 'auto',
 
       components: [
-        'QBtn'
+        'QBtn',
         'QCard',
         'QCardSection',
         'QCardActions',

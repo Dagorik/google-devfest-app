@@ -1,6 +1,6 @@
 import Firebase from 'firebase/app';
 import 'firebase/auth';
-import fireConfig from '../../firebase.conf';
+import fireConfig from '../../firebase.conf.js';
 
 
 // Initialize Firebase
