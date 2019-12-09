@@ -13,6 +13,11 @@
 <script>
 export default {
   name: 'PageIndex',
+  async mounted() {
+    console.log('Entré');
+    await this.$store.dispatch('api/fetchSpeakers');
+    console.log(this.$store);
+  },
 };
 </script>
 
