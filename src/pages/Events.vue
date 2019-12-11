@@ -12,7 +12,7 @@
                 <p> {{ event.speaker[0] }}</p>
               </div>
               <div>
-                <span>Sala: {{ event.place }}</span> - {{ event.seats_avaliables }} seats left
+                <span>Sala: {{ event.hall }}</span> - {{ event.seats_avaliables }} seats left
               </div>
             </div>
         </q-timeline-entry>
@@ -29,12 +29,32 @@ export default {
       layout: 'comfortable',
       side: 'right',
       events: [],
+      eventsSort: [],
+      speakers: [],
     };
   },
   methods: {
     async loadEvents() {
       const events = this.$store.getters['api/getEvents'];
+      const speakers = this.$store.getters['api/getSpeakers'];
       this.events = events.length !== 0 ? events : await this.$store.dispatch('api/fetchEvents');
+      this.speakers = speakers.length !== 0 ? speakers : await this.$store.dispatch('api/fetchSpeakers');
+      this.setSpeakers();
+    },
+    setSpeakers() {
+      this.events.forEach((event, index) => {
+        event.speaker.forEach((speakerID) => {
+          const spk = this.speakers.find(_speaker => _speaker.id === speakerID);
+          const spkName = spk.first_name + spk.last_name;
+          this.events[index].speaker[0] = spkName.replace(/''/g, ' ');
+        });
+      });
+      this.sortedEvents();
+    },
+    sortedEvents() {
+      const c = this.events.sort((a, b) => a.start_at > b.start_at);
+      console.log(this.events);
+      console.log('Sorted ', c);
     },
   },
   mounted() {
