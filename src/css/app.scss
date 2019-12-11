@@ -3,4 +3,19 @@
 
 .font {
   font-family: 'Permanent Marker', cursive;
+  font-size: 2.3em;
+  height: 64px;
+  padding-top: 0.3em;
+  padding-left: 2em !important;
+}
+
+#hero {
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/devfest-cdmx-19.appspot.com/o/assets%2Fhero.png?alt=media&token=cd29b644-bde7-4e75-8d3e-4e4bc69955b9);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+  background-color: #fff;
+  min-height: 500px;
+  @media only screen and (max-width: 1264px) and (min-width: 960px) {
+  }
 }
