@@ -12,7 +12,7 @@
         >
           <div class="item-content q-py-sm">
             <div>
-              <q-chip color="product" size="md">{{ event.track }}</q-chip>
+              <q-chip color="ia" :class="event.track" size="md">{{ event.track }}</q-chip>
               <span>{{ event.name }}</span>
               <p>{{ event.speaker[0].first }} {{ event.speaker[0].last }}</p>
             </div>
@@ -83,4 +83,5 @@ export default {
   justify-content: center;
   flex-direction: column;
 }
+
 </style>
