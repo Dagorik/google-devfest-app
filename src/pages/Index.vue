@@ -15,6 +15,7 @@ export default {
   name: 'PageIndex',
   async mounted() {
     await this.$store.dispatch('api/fetchSpeakers');
+    await this.$store.dispatch('api/fetchEvents');
   },
 };
 </script>
