@@ -1,7 +1,6 @@
 .DS_Store
 .thumbs.db
 node_modules
-firebase.conf.js
 
 # Quasar core related directories
 .quasar
