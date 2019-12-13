@@ -11,3 +11,16 @@ export function fetchSpeakers({ commit }) {
       });
   });
 }
+
+export function fetchEvents({ commit }) {
+  return new Promise((resolve, reject) => {
+    axiosInstance.get('conference/')
+      .then((result) => {
+        commit('setEvents', result.data);
+        resolve(result.data);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+}
