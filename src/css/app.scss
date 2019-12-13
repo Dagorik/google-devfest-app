@@ -5,11 +5,43 @@
   font-family: 'Permanent Marker', cursive;
 }
 
-$ia : #F96409;
-$product: #E8009C !important;
+$ia: #F96409;
+$product: #E8009C;
 $web: #FFEC00;
 $mobile: #7cda1a;
 $cloud: #00E7FF;
 $diversidad: #31FFAE;
 $emprendimiento: #8B38FF;
 $contenidos: #C10015;
+
+.IA {
+  background-color: $ia;
+}
+
+.PRODUCT {
+  background-color: $product;
+}
+
+.WEB {
+  background-color: $web;
+}
+
+.MOBILE {
+  background-color: $mobile;
+}
+
+.CLOUD {
+  background-color: $cloud;
+}
+
+.DIVERSIDAD {
+  background-color: $diversidad;
+}
+
+.EMPRENDIMIENTO {
+  background-color: $emprendimiento;
+}
+
+.CONTENIDOS {
+  background-color: $contenidos;
+}
