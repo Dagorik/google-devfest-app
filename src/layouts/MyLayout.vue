@@ -9,15 +9,16 @@
           v-model="toggle"
           flat stretch
           toggle-color="yellow"
+          @click="redirectEvent"
           :options="[
-            {label: 'DevFest', value: 'DevFest'},
-            {label: 'Tracks', value: 'Tracks'},
-            {label: 'Speakers', value: 'Speakers'},
-            {label: 'Tickets', value: 'Tickets'},
-            {label: 'Sponsors', value: 'Sponsors'},
-            {label: 'Sede', value: 'Sede'},
-            {label: 'Agenda', value: 'Agenda'},
-            {label: 'Login', value: 'Login'},
+            {label: 'DevFest', value: ''},
+            {label: 'Tracks', value: ''},
+            {label: 'Speakers', value: 'speakers'},
+            {label: 'Agenda', value: 'events'},
+            {label: 'Tickets', value: ''},
+            {label: 'Sponsors', value: ''},
+            {label: 'Sede', value: ''},
+            {label: 'Login', value: 'auth'},
           ]"
           >
         </q-btn-toggle>
@@ -51,6 +52,15 @@ export default {
       toggle: null,
       tab: '',
     };
+  },
+  methods: {
+    redirectEvent() {
+      const newRoute = `/${this.toggle}`;
+      if (newRoute !== this.$route.path) {
+        this.$router.push(`/${this.toggle}`)
+          .catch();
+      }
+    },
   },
 };
 </script>
